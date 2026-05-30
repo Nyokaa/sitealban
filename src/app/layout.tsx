@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StickyAppointment from "@/components/StickyAppointment";
 import { site } from "@/data/site";
 
 const serif = Cormorant_Garamond({
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">{children}</main>
+        <StickyAppointment />
         <Footer />
       </body>
     </html>
