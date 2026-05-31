@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.intro,
+  // Tant que le site n'est pas agréé/publié, on interdit l'indexation.
+  robots: site.indexable
+    ? undefined
+    : { index: false, follow: false, nocache: true },
   openGraph: {
     title: site.name,
     description: site.slogan,
