@@ -22,18 +22,18 @@ export default function Home() {
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover"
         />
-        {/* Voile bleu nuit pour la lisibilité du texte */}
+        {/* Voile léger pour préserver un minimum de lisibilité, image bien visible */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/60"
+          className="absolute inset-0 bg-navy/25"
           aria-hidden
         />
-        <div className="container-content relative grid gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:items-center">
+        <div className="container-content relative grid gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:items-center [text-shadow:_0_2px_14px_rgba(8,16,33,0.7)]">
           <div>
             <p className="eyebrow mb-5">Étude notariale · {site.contact.city}</p>
             <h1 className="text-4xl font-semibold leading-tight text-cream sm:text-5xl lg:text-6xl">
               {site.slogan}
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/75">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/90">
               {site.intro}
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
