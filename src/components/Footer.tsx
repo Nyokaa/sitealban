@@ -19,6 +19,22 @@ export default function Footer() {
             <SocialLink href={site.social.instagram} label="Instagram">in</SocialLink>
             <SocialLink href={site.social.linkedin} label="LinkedIn">in</SocialLink>
           </div>
+
+          {/* Logo institutionnel Notaires de France */}
+          <a
+            href="https://www.notaires.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Notaires de France"
+            className="mt-6 inline-flex rounded-lg bg-white p-3 shadow-sm transition-transform hover:scale-[1.03]"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/notaires-de-france.webp`}
+              alt="Notaires de France"
+              className="h-16 w-auto"
+            />
+          </a>
         </div>
 
         {/* Navigation */}
