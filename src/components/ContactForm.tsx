@@ -1,23 +1,50 @@
 "use client";
 
 import { useState } from "react";
+import { site } from "@/data/site";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: brancher l'envoi réel (API route, service email, CRM...).
-    // Pour l'instant, on simule un envoi côté client.
+    // Sans backend, on ouvre l'e-mail pré-rempli vers l'étude : fiable et
+    // compatible avec un hébergement statique. (À remplacer par une route API
+    // ou un service d'envoi le jour où un serveur est disponible.)
+    const data = new FormData(e.currentTarget);
+    const nom = String(data.get("nom") ?? "");
+    const tel = String(data.get("tel") ?? "");
+    const email = String(data.get("email") ?? "");
+    const message = String(data.get("message") ?? "");
+
+    const subject = `Demande de contact — ${nom || "site internet"}`;
+    const body = [
+      `Nom et prénom : ${nom}`,
+      `Téléphone : ${tel}`,
+      `E-mail : ${email}`,
+      "",
+      message,
+    ].join("\n");
+
+    window.location.href = `mailto:${site.contact.email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
     setSent(true);
   }
 
   if (sent) {
     return (
       <div className="rounded-xl border border-gold/40 bg-gold/10 p-8 text-center">
-        <p className="font-serif text-2xl text-navy">Merci pour votre message</p>
+        <p className="font-serif text-2xl text-navy">Merci !</p>
         <p className="mt-2 text-ink/70">
-          Notre équipe vous recontactera dans les meilleurs délais.
+          Votre logiciel de messagerie vient de s&apos;ouvrir avec votre demande
+          pré-remplie : il ne vous reste qu&apos;à l&apos;envoyer. Si rien ne
+          s&apos;est ouvert, écrivez-nous directement à{" "}
+          <a href={`mailto:${site.contact.email}`} className="font-semibold text-gold">
+            {site.contact.email}
+          </a>
+          .
         </p>
       </div>
     );

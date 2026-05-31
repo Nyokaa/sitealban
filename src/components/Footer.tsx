@@ -15,9 +15,23 @@ export default function Footer() {
           />
           <p className="mt-4 text-sm leading-relaxed text-cream/70">{site.slogan}</p>
           <div className="mt-5 flex gap-3">
-            <SocialLink href={site.social.facebook} label="Facebook">f</SocialLink>
-            <SocialLink href={site.social.instagram} label="Instagram">in</SocialLink>
-            <SocialLink href={site.social.linkedin} label="LinkedIn">in</SocialLink>
+            <SocialLink href={site.social.facebook} label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden>
+                <path d="M14 13.5h2.5l1-4H14V7c0-1 .5-1.5 1.7-1.5H17.5V2.1C17 2 15.8 2 14.9 2 12.3 2 11 3.5 11 6.2v3.3H8v4h3V22h3v-8.5Z" />
+              </svg>
+            </SocialLink>
+            <SocialLink href={site.social.instagram} label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4" aria-hidden>
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </SocialLink>
+            <SocialLink href={site.social.linkedin} label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden>
+                <path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.4 8.4h3.1V21H3.4V8.4Zm5.2 0h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H8.6V8.4Z" />
+              </svg>
+            </SocialLink>
           </div>
 
           {/* Logo institutionnel Notaires de France */}
@@ -98,9 +112,12 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. Tous droits réservés.
           </p>
-          <p className="flex gap-4">
+          <p className="flex flex-wrap gap-4">
             <Link href="/mentions-legales" className="hover:text-gold">
               Mentions légales
+            </Link>
+            <Link href="/politique-de-confidentialite" className="hover:text-gold">
+              Politique de confidentialité
             </Link>
             <Link href="/faq" className="hover:text-gold">
               FAQ

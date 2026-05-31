@@ -9,6 +9,9 @@
 export const site = {
   name: "AETERNAM NOTAIRES",
   shortName: "Aeternam",
+  // URL publique du site (sert au SEO : sitemap, données structurées, partage).
+  // À mettre à jour le jour où le site sera servi sur l'hébergement notarial.
+  url: "https://nyokaa.github.io/sitealban",
   slogan: "La confiance d'aujourd'hui, la sérénité de demain",
   intro:
     "Notre étude notariale met son expertise au service des particuliers, des entreprises et des institutions. Notre mission : vous offrir un accompagnement juridique clair, humain et rigoureux, à chaque étape de vos démarches.",

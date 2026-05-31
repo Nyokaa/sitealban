@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyAppointment from "@/components/StickyAppointment";
 import Chatbot from "@/components/Chatbot";
+import StructuredData from "@/components/StructuredData";
 import { site } from "@/data/site";
 
 const serif = Cormorant_Garamond({
@@ -21,6 +22,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
+  // Racine du domaine uniquement : Next ajoute déjà le basePath aux images
+  // (évite un doublon /sitealban/sitealban/ sur l'URL de l'image de partage).
+  metadataBase: new URL("/", site.url),
   title: {
     default: `${site.name} — Étude notariale à ${site.contact.city}`,
     template: `%s — ${site.name}`,
@@ -31,6 +35,7 @@ export const metadata: Metadata = {
     description: site.slogan,
     type: "website",
     locale: "fr_FR",
+    siteName: site.name,
   },
 };
 
@@ -42,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${serif.variable} ${sans.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <StructuredData />
         <Header />
         <main className="flex-1">{children}</main>
         <StickyAppointment />
