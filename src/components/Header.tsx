@@ -11,8 +11,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur">
-      <div className="container-content flex items-center justify-between py-4">
-        <Link href="/" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
+      <div className="container-content flex items-center justify-between gap-4 py-4">
+        <Link href="/" className="flex shrink-0 flex-col leading-none" onClick={() => setOpen(false)}>
           <span className="font-serif text-2xl font-semibold tracking-wide text-navy">
             {site.name}
           </span>
@@ -22,7 +22,7 @@ export default function Header() {
         </Link>
 
         {/* Navigation bureau */}
-        <nav className="hidden items-center gap-6 xl:flex">
+        <nav className="hidden items-center gap-x-5 xl:flex">
           {navigation.map((item) => {
             const active =
               item.href === "/"
@@ -32,7 +32,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-gold ${
+                className={`whitespace-nowrap text-sm font-medium transition-colors hover:text-gold ${
                   active ? "text-gold" : "text-navy"
                 }`}
               >
@@ -42,8 +42,8 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden xl:block">
-          <Link href="/contact" className="btn-gold">
+        <div className="hidden shrink-0 xl:block">
+          <Link href="/contact" className="btn-gold whitespace-nowrap">
             Prendre rendez-vous
           </Link>
         </div>

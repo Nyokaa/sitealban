@@ -47,7 +47,7 @@ export const navigation = [
   { label: "L'équipe", href: "/equipe" },
   { label: "Expertises", href: "/expertise" },
   { label: "Honoraires", href: "/honoraires" },
-  { label: "Outils & Simulateurs", href: "/outils" },
+  { label: "Outils", href: "/outils" },
   { label: "Actualités", href: "/actualites" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
