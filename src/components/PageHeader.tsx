@@ -8,8 +8,19 @@ export default function PageHeader({
   description?: string;
 }) {
   return (
-    <section className="bg-navy text-cream">
-      <div className="container-content py-16 sm:py-20">
+    <section className="relative overflow-hidden bg-navy text-cream">
+      {/* Même image de fond que la hero */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/hero-bg.jpg`}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* Voile léger pour la lisibilité, image bien visible */}
+      <div className="absolute inset-0 bg-navy/45" aria-hidden />
+
+      <div className="container-content relative py-16 sm:py-20 [text-shadow:_0_2px_14px_rgba(8,16,33,0.7)]">
         {eyebrow && (
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-gold">
             {eyebrow}
@@ -19,7 +30,7 @@ export default function PageHeader({
           {title}
         </h1>
         {description && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream/75">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream/90">
             {description}
           </p>
         )}
