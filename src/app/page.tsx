@@ -14,10 +14,19 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden bg-navy text-cream">
-        <div className="absolute inset-0 opacity-10" aria-hidden>
-          <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-gold blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gold-light blur-3xl" />
-        </div>
+        {/* Image de fond */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/hero-bg.jpg`}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Voile bleu nuit pour la lisibilité du texte */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/60"
+          aria-hidden
+        />
         <div className="container-content relative grid gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="eyebrow mb-5">Étude notariale · {site.contact.city}</p>
