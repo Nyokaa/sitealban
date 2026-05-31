@@ -12,13 +12,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-navy/10 bg-cream/95 backdrop-blur">
       <div className="container-content flex items-center justify-between gap-4 py-4">
-        <Link href="/" className="flex shrink-0 flex-col leading-none" onClick={() => setOpen(false)}>
-          <span className="font-serif text-2xl font-semibold tracking-wide text-navy">
-            {site.name}
-          </span>
-          <span className="mt-1 text-[0.65rem] uppercase tracking-[0.3em] text-gold">
-            {site.contact.city}
-          </span>
+        <Link href="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
+            alt={site.name}
+            className="h-12 w-auto sm:h-14"
+          />
         </Link>
 
         {/* Navigation bureau */}

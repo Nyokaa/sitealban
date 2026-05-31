@@ -14,6 +14,8 @@ const nextConfig = {
   // Préfixe d'URL pour un site de projet GitHub Pages (nyokaa.github.io/sitealban).
   basePath: isGithubActions ? `/${repo}` : "",
   assetPrefix: isGithubActions ? `/${repo}/` : "",
+  // Rend le basePath disponible côté composants (pour les images dans /public).
+  env: { NEXT_PUBLIC_BASE_PATH: isGithubActions ? `/${repo}` : "" },
   // Génère des dossiers avec index.html (URLs propres sur Pages).
   trailingSlash: true,
 };

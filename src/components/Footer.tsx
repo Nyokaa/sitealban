@@ -7,8 +7,13 @@ export default function Footer() {
       <div className="container-content grid gap-10 py-14 md:grid-cols-4">
         {/* Identité */}
         <div className="md:col-span-1">
-          <p className="font-serif text-2xl font-semibold text-cream">{site.name}</p>
-          <p className="mt-3 text-sm leading-relaxed text-cream/70">{site.slogan}</p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
+            alt={site.name}
+            className="h-20 w-auto brightness-0 invert"
+          />
+          <p className="mt-4 text-sm leading-relaxed text-cream/70">{site.slogan}</p>
           <div className="mt-5 flex gap-3">
             <SocialLink href={site.social.facebook} label="Facebook">f</SocialLink>
             <SocialLink href={site.social.instagram} label="Instagram">in</SocialLink>
