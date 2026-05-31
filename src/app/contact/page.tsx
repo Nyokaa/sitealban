@@ -61,14 +61,25 @@ export default function ContactPage() {
               ))}
             </ul>
 
-            <div className="mt-8 overflow-hidden rounded-xl border border-navy/10">
-              <iframe
-                title="Localisation de l'étude"
-                src={`https://www.google.com/maps?q=${mapsQuery}&output=embed`}
-                className="h-64 w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            {/* Accès : lien externe (chargé au clic) pour ne déposer aucun
+                cookie tiers sans action de l'utilisateur (conformité RGPD/CNIL). */}
+            <div className="mt-8 rounded-xl border border-navy/10 bg-cream-dark/50 p-6">
+              <p className="text-sm font-semibold text-navy">Plan d&apos;accès</p>
+              <p className="mt-1 text-sm text-ink/70">
+                {site.contact.address}, {site.contact.postalCode} {site.contact.city}
+              </p>
+              <a
+                href={`https://www.openstreetmap.org/search?query=${mapsQuery}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline mt-4"
+              >
+                Voir l&apos;itinéraire →
+              </a>
+              <p className="mt-3 text-xs text-ink/50">
+                Le plan s&apos;ouvre dans un nouvel onglet : aucune donnée
+                n&apos;est transmise à un service tiers sans votre action.
+              </p>
             </div>
           </div>
 

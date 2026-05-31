@@ -60,7 +60,7 @@ export default function Home() {
               </p>
               <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-cream/10 pt-6 text-center">
                 <Stat value="10" label="domaines d'expertise" />
-                <Stat value="100%" label="actes sécurisés" />
+                <Stat value="Officier" label="public et ministériel" />
                 <Stat value="6j/7" label="à votre écoute" />
               </dl>
             </div>
@@ -128,7 +128,7 @@ export default function Home() {
       <section className="container-content py-20">
         <SectionHeading
           center
-          eyebrow="Pourquoi nous choisir"
+          eyebrow="Notre approche"
           title="La sécurité juridique alliée à la proximité"
         />
         <div className="mt-12 grid gap-6 md:grid-cols-3">

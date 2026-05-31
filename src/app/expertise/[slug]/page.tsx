@@ -41,7 +41,7 @@ export default function ExpertiseDetail({
             </div>
 
             <h2 className="mt-10 text-2xl font-semibold text-navy">
-              Pourquoi nous confier votre dossier ?
+              Notre accompagnement
             </h2>
             <ul className="mt-5 space-y-3">
               {e.highlights.map((h) => (
