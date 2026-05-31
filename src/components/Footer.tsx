@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="md:col-span-1">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.png`}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.webp`}
             alt={site.name}
-            className="h-20 w-auto brightness-0 invert"
+            className="h-24 w-auto brightness-0 invert"
           />
           <p className="mt-4 text-sm leading-relaxed text-cream/70">{site.slogan}</p>
           <div className="mt-5 flex gap-3">
